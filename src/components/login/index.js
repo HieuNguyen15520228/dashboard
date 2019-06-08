@@ -6,12 +6,17 @@ import {connect} from 'react-redux'
 import LoginForm from './LoginForm'
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {Redirect } from 'react-router-dom'
 
 class login extends Component {
     loginUser = (data) => {
         this.props.Login(data);
     }
     render() {
+        const { isAuth } = this.props.auth;
+        if (isAuth) {
+            return <Redirect to={{ pathname: '/' }} />
+        }
         return (
             <div className="limiter">
                 <ToastContainer />
