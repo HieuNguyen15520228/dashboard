@@ -12,7 +12,6 @@ class login extends Component {
         this.props.Login(data);
     }
     render() {
-        
         return (
             <div className="limiter">
                 <ToastContainer />
