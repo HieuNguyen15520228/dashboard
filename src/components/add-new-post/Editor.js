@@ -9,32 +9,10 @@ import "../../assets/quill.css";
 class Editor extends Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      text: '',
-    } // You can also pass a Quill Delta here
+    this.quill_img_handler = this.quill_img_handler.bind(this)
+    this.state = { text: '' } // You can also pass a Quill Delta here
   }
-  toolbarOptions = {
-    container: [
-      ['bold', 'italic', 'underline'],        // toggled buttons
-
-      [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
-      ['link', 'image', 'video'],
-
-      ['clean']                                         // remove formatting button
-    ],
-    handlers: { image: this.quill_img_handler },
-  };
-  history = {
-    delay: 2000,
-    maxStack: 500,
-    userOnly: true
-  }
-  modules = {
-    toolbar: this.toolbarOptions,
-    history: this.history,
-  }
-  quill_img_handler = () => {
+   quill_img_handler() {
     let fileInput = this.container.querySelector('input.ql-image[type=file]');
 
     if (fileInput == null) {
@@ -85,14 +63,37 @@ class Editor extends Component {
     e.preventDefault();
     console.log(this.state.text)
   }
+  
+  toolbarOptions = {
+    container: [
+      ['bold', 'italic', 'underline'],        // toggled buttons
 
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+      ['link', 'image', 'video'],
+
+      ['clean']                                         // remove formatting button
+    ],
+    handlers: { image: this.quill_img_handler },
+  };
+
+  history = {
+    delay: 2000,
+    maxStack: 500,
+    userOnly: true
+  }
+  modules = {
+    toolbar: this.toolbarOptions,
+    history: this.history,
+  }
   render() {
     // Quill.register('modules/imageDrop', ImageDrop);
+
     const formats = [
       'bold', 'italic', 'underline',
       'list', 'bullet', 'indent',
       'link', 'image', 'video'
     ]
+    
     console.log(this)
     return (
       <Card small className="mb-3">
@@ -103,7 +104,8 @@ class Editor extends Component {
               className="add-new-post__editor mb-1"
               modules={this.modules}
               formats={formats}
-              theme='snow' value={this.state.text}
+              theme='snow' 
+              defaultValue={this.state.text}
               onChange={this.handleChange} />
             <button onClick={this.post}>dddd</button>
           </Form>
