@@ -4,7 +4,8 @@ import { toast } from "react-toastify";
 
 const axiosInstance = axiosService.getInstance();
 
-export const GET_PENDING_RENTALS_SUCCESS = 'GET_PENDING_RENTALS_SUCCESS'
+export const GET_RENTALS_SUCCESS = 'GET_RENTALS_SUCCESS';
+export const GET_PENDING_RENTALS_SUCCESS = 'GET_PENDING_RENTALS_SUCCESS';
 const getPendingRentalsSuccess = (data) => {
     return {
         type: GET_PENDING_RENTALS_SUCCESS,
@@ -45,6 +46,23 @@ export const forbidRental = (rentalId) => {
         .catch(({ response }) => {
             toast.error(response.data.detail);
             dispatch(hideLoading());
+        })
+    }
+}
+const getRentalsSuccess = (data) =>{
+    return {
+        type: GET_RENTALS_SUCCESS,
+        data
+    }
+}
+export const getRentals = () => {
+    return dispatch => {
+        axiosInstance.get('/rentals')
+        .then(res => {
+            dispatch(getRentalsSuccess(res.data))
+        })
+        .catch(({response})=>{
+            toast.error(response.data.detail);
         })
     }
 }

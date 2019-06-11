@@ -14,6 +14,9 @@ import BlogPosts from "./views/BlogPosts";
 import Overview from 'components/Overview';
 import User from 'components/User';
 import RentalWating from 'components/Rental/RentalWaiting'
+import Rental from 'components/Rental'
+import Blog from 'components/Blog'
+
 export default [
   {
     path: "/",
@@ -58,6 +61,11 @@ export default [
     component: BlogPosts
   },
   {
+    path: "/blog",
+    layout: DefaultLayout,
+    component: Blog
+  },
+  {
     path: "/user",
     layout: DefaultLayout,
     component: User
@@ -66,5 +74,10 @@ export default [
     path: "/rental-pending",
     layout: DefaultLayout,
     component : RentalWating
+  },
+  {
+    path: "/rental",
+    layout: DefaultLayout,
+    component : Rental
   }
 ];

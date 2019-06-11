@@ -1,15 +1,15 @@
-import { GET_PENDING_RENTALS_SUCCESS, GET_RENTALS_SUCCESS } from './actions';
+import { GET_PENDING_BLOGS_SUCCESS, GET_BLOGS_SUCCESS } from './actions';
 
 const INITIAL_STATE = {
     pendingList : [], 
     List: []
 }
 
-export const rentalReducer = (state = INITIAL_STATE, action) => {
+export const blogReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case GET_PENDING_RENTALS_SUCCESS:
+        case GET_PENDING_BLOGS_SUCCESS:
             return {...state, pendingList: action.data};
-        case GET_RENTALS_SUCCESS:
+        case GET_BLOGS_SUCCESS:
             return {...state, List: action.data}
         default:
             return state;

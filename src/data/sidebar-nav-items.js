@@ -12,6 +12,11 @@ export default function() {
       to: "/blog-posts",
     },
     {
+      title: "Blog cho kiem duyet",
+      htmlBefore: '<i class="material-icons">vertical_split</i>',
+      to: "/blog",
+    },
+    {
       title: "Add New Post",
       htmlBefore: '<i class="material-icons">note_add</i>',
       to: "/add-new-post",
