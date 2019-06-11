@@ -36,3 +36,15 @@ export const approveRental = (rentalId) => {
             })
     }
 }
+export const forbidRental = (rentalId) => {
+    return dispatch => {
+        axiosInstance.post('/admin/forbidRental', {rentalId})
+        .then(res => {
+            dispatch(getPendingRentals(res.data))
+        })
+        .catch(({ response }) => {
+            toast.error(response.data.detail);
+            dispatch(hideLoading());
+        })
+    }
+}

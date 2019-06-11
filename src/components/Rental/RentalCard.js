@@ -9,6 +9,7 @@ import {
 } from "shards-react";
 import {connect} from 'react-redux';
 import {approveRental} from './actions'
+import moment from 'moment'
 class RentalCard extends Component {
     approve = () => {
 
@@ -66,7 +67,7 @@ class RentalCard extends Component {
                             </a>
                         </h5>
                         <p className="card-text d-inline-block mb-3">{rental.address}</p>
-                        <span className="text-muted">{rental.createdAt}</span>
+                        <span className="text-muted">{moment(rental.createdAt).format('DD/MM/YYYY')}</span>
                     </CardBody>
                 </Card>
             </Col>
