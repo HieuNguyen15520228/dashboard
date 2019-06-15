@@ -6,7 +6,7 @@ import { loadingBarReducer } from 'react-redux-loading-bar'
 import {overviewReducer} from 'components/Overview/reducer';
 import {userReducer} from 'components/User/reducer'
 import {rentalReducer} from 'components/Rental/reducer'
-import {blogReducer} from 'components/Blog/reducer'
+import {blogReducer} from 'components/blog/reducer'
 export const init = () => {
     const reducer = combineReducers({
         form: formReducer,

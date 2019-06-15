@@ -12,7 +12,7 @@ class Editor extends Component {
     this.quill_img_handler = this.quill_img_handler.bind(this)
     this.state = { text: '' } // You can also pass a Quill Delta here
   }
-   quill_img_handler() {
+  quill_img_handler() {
     let fileInput = this.container.querySelector('input.ql-image[type=file]');
 
     if (fileInput == null) {
@@ -63,7 +63,7 @@ class Editor extends Component {
     e.preventDefault();
     console.log(this.state.text)
   }
-  
+
   toolbarOptions = {
     container: [
       ['bold', 'italic', 'underline'],        // toggled buttons
@@ -93,7 +93,7 @@ class Editor extends Component {
       'list', 'bullet', 'indent',
       'link', 'image', 'video'
     ]
-    
+
     console.log(this)
     return (
       <Card small className="mb-3">
@@ -104,7 +104,7 @@ class Editor extends Component {
               className="add-new-post__editor mb-1"
               modules={this.modules}
               formats={formats}
-              theme='snow' 
+              theme='snow'
               defaultValue={this.state.text}
               onChange={this.handleChange} />
             <button onClick={this.post}>dddd</button>

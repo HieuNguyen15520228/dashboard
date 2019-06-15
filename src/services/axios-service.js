@@ -11,9 +11,8 @@ class AxiosService {
 
   initInstance() {
     this.axiosInstance = axios.create({
-      baseURL: process.env.REACT_APP_BACKEND_URL,
+      baseURL: process.env.NODE_ENV === "production" ? process.env.REACT_APP_BACKEND_URL : 'http://localhost:3001/api/v1',
     });
-    console.log(process.env.REACT_APP_BACKEND_URL)
     this.axiosInstance.defaults.headers.common['Content-Type'] = 'multipart/form-data';
 
     this.axiosInstance.interceptors.request.use(

@@ -15,7 +15,7 @@ import Overview from 'components/Overview';
 import User from 'components/User';
 import RentalWating from 'components/Rental/RentalWaiting'
 import Rental from 'components/Rental'
-import Blog from 'components/Blog'
+import Blog from 'components/blog'
 
 export default [
   {
