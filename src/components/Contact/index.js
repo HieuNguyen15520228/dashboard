@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row} from "shards-react";
+import { Container, Row } from "shards-react";
 import PageTitle from "components/common/PageTitle";
 import { getContact } from 'components/Blog/actions'
 import { connect } from 'react-redux'
@@ -16,8 +16,7 @@ class Contact extends Component {
                 <Row noGutters className="page-header py-4">
                     <PageTitle sm="4" title="Danh sách người dùng" className="text-sm-left" />
                 </Row>
-                <ContactSection title="Trang liên hệ" list={contactList} />}
-    
+                <ContactSection title="Trang liên hệ" list={contactList} />
             </Container>
         );
     }

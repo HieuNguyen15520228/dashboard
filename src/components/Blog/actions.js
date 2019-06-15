@@ -24,7 +24,7 @@ export const getContact = () => {
         axiosInstance.get('/admin/getContact')
         .then(res => {
             console.log(res.data)
-            dispatch(getBlogsSuccess(res.data))
+            dispatch(getContactSuccess(res.data))
         })
         .catch(({ response }) => {
             toast.error(response.data.detail);
