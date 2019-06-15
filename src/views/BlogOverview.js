@@ -6,8 +6,8 @@ import PageTitle from "../components/common/PageTitle";
 import SmallStats from "../components/common/SmallStats";
 import UsersOverview from "../components/blog/UsersOverview";
 import UsersByDevice from "../components/blog/UsersByDevice";
-import NewDraft from "../components/blog/NewDraft";
-import Discussions from "../components/blog/Discussions";
+import NewDraft from "../components/Blog/NewDraft";
+import Discussions from "../components/Blog/Discussions";
 import TopReferrals from "../components/common/TopReferrals";
 
 class BlogOverview extends Component {

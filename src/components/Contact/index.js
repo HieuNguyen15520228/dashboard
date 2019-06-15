@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row} from "shards-react";
 import PageTitle from "components/common/PageTitle";
-import { getContact } from 'components/blog/actions'
+import { getContact } from 'components/Blog/actions'
 import { connect } from 'react-redux'
 import ContactSection from './ContactSection'
 class Contact extends Component {
