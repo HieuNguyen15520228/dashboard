@@ -6,19 +6,42 @@ const axiosInstance = axiosService.getInstance();
 
 export const GET_PENDING_BLOGS_SUCCESS = 'GET_PENDING_BLOGS_SUCCESS' 
 export const GET_BLOGS_SUCCESS = 'GET_BLOGS_SUCCESS'
+export const GET_CONTACT_SUCCESS = 'GET_CONTACT_SUCCESS'
 const getPendingBlogsSuccess = (data) => {
     return {
         type:GET_PENDING_BLOGS_SUCCESS,
         data
     }
 }
-
+const getContactSuccess = (data) => {
+    return {
+        type: GET_CONTACT_SUCCESS,
+        data
+    }
+}
+export const getContact = () => {
+    return dispatch => {
+        axiosInstance.get('/admin/getContact')
+        .then(res => {
+            console.log(res.data)
+            dispatch(getBlogsSuccess(res.data))
+        })
+        .catch(({ response }) => {
+            toast.error(response.data.detail);
+            dispatch(hideLoading());
+        }) 
+    }
+}
 export const getPendingBlogs = () => {
     return dispatch => {
         axiosInstance.get('/admin/getPendingBlogs')
         .then(res => {
             console.log(res.data)
             dispatch(getPendingBlogsSuccess(res.data))
+        })
+        .catch(({ response }) => {
+            toast.error(response.data.detail);
+            dispatch(hideLoading());
         })
     }
 }

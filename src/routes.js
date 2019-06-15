@@ -16,7 +16,7 @@ import User from 'components/User';
 import RentalWating from 'components/Rental/RentalWaiting'
 import Rental from 'components/Rental'
 import Blog from 'components/blog'
-
+import Contact from 'components/Contact'
 export default [
   {
     path: "/",
@@ -79,5 +79,10 @@ export default [
     path: "/rental",
     layout: DefaultLayout,
     component : Rental
+  },
+  {
+    path: '/contact',
+    layout: DefaultLayout,
+    component: Contact
   }
 ];

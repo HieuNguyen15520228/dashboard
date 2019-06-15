@@ -10,7 +10,6 @@ import {connect} from 'react-redux'
 import BlogCard from './BlogCard'
 class Blog extends Component {
     componentDidMount() {
-        console.log('run')
         this.props.getPendingBlogs()
     }
     render() { 

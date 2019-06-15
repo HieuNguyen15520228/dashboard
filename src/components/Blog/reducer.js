@@ -1,8 +1,9 @@
-import { GET_PENDING_BLOGS_SUCCESS, GET_BLOGS_SUCCESS } from './actions';
+import { GET_PENDING_BLOGS_SUCCESS, GET_BLOGS_SUCCESS,GET_CONTACT_SUCCESS} from './actions';
 
 const INITIAL_STATE = {
     pendingList : [], 
-    List: []
+    List: [],
+    contactList: []
 }
 
 export const blogReducer = (state = INITIAL_STATE, action) => {
@@ -11,6 +12,8 @@ export const blogReducer = (state = INITIAL_STATE, action) => {
             return {...state, pendingList: action.data};
         case GET_BLOGS_SUCCESS:
             return {...state, List: action.data}
+        case GET_CONTACT_SUCCESS:
+            return {...state, contactList: action.data}
         default:
             return state;
     }

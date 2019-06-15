@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Container, Row} from "shards-react";
-import { getUsers } from './actions'
 import PageTitle from "components/common/PageTitle";
+
+import { getUsers } from './actions'
 import { connect } from 'react-redux'
 import _ from 'lodash'
 import UserSection from './UserSection'
