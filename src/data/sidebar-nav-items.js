@@ -41,6 +41,11 @@ export default function() {
       htmlBefore: '<i class="material-icons">check</i>',
       to: "/rental-pending",
     },
+    {
+      title: "Góp ý từ khách hàng",
+      htmlBefore: '<i class="material-icons">check</i>',
+      to: "/contact",
+    },
     // {
     //   title: "User Profile",
     //   htmlBefore: '<i class="material-icons">person</i>',

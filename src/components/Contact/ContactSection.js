@@ -34,7 +34,7 @@ class ContactSection extends Component {
 									{this.props.list.map((i, index) => (
 										<tr key={index}>
 											<td>{index + 1}</td>
-											<td>{i.username}</td>
+											<td>{i.name}</td>
 											<td>{i.email}</td>
 											<td>{i.message}</td>
 										</tr>
